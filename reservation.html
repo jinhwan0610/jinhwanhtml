@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      body {background: paleturquoise;}
+    </style>
+  </head>
+  <body>
+    <h2>우진환의 레스토랑 예약</h2>
+    <form>
+      <fieldset>
+        <legend>예약 날짜</legend>
+        아이디: <input type="text"><br>
+        전화번호: <input type="text"><br>
+        예약 입력: <select name="human">
+          <option value="1명">1명</option>
+          <option value="2명">2명</option>
+          <option value="3명">3명</option>
+          <option value="4명">4명</option>
+        </select>
+      </fieldset><br><br>
+      <fieldset>
+        <legend>일정 선택 및 시간</legend>
+        일정<input type="date" name="mday"/><br>
+        시간<input type="time" name="mtime"/>
+      </fieldset><br><br>
+      <input type="submit" value="예약하기">
+      <input type="reset" value="취소하기">
+    </form>
+
+  </body>
+</html>

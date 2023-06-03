@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>우진환의 웹 페이지</title>
+    <style>
+
+        body {background: mintcream;}
+        /* 가상 클래스와 가상 요소 */
+        .link::after {
+            content: url("강아지.png");
+        }
+        
+        /* 수평 메뉴 */
+        .horizontal-menu {
+            list-style-type: none; cursor: pointer;
+            margin: 0; padding: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+        
+        .horizontal-menu li {
+            float: left;
+        }
+        
+        .horizontal-menu li a {
+            display: block;
+            color: white;text-align: center;
+            padding: 14px 16px; text-decoration: none;
+        }
+        
+        .horizontal-menu li a:hover {
+            background-color: #111;
+        }
+        
+        /* 수직 메뉴와 드롭다운 서브 메뉴 */
+        .vertical-menu {
+            width: 200px; display: none;
+        }
+        
+        .vertical-menu a {
+            background-color: #f9f9f9;
+            color: black; display: block;
+            padding: 12px; text-decoration: none;
+        }
+        
+        .vertical-menu a:hover {
+            background-color: #ccc;
+        }
+        
+        .vertical-menu .sub-menu {
+            display: none;
+        }
+
+        .vertical-menu li:hover .sub-menu {
+            display: block;
+        }
+        
+        .vertical-menu .sub-menu a {
+            padding-left: 30px;
+        }
+        
+        /* 박스 모델 */
+        .box {
+            width: 200px; height: 200px;
+            margin: 20px; padding: 20px;
+            border: 4px solid black; background: palegreen;
+            float: right; text-align:center;
+        }
+        
+        /* 리스트와 표 태그 */
+
+        table, th, td {
+            border: 1px solid black;
+        }
+        
+        /* 선택자 */
+        #header {
+            background-color: white;
+            padding: 20px;text-align: center; 
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1 class="link">우진환의 레스토랑 서비스</h1>
+    </header>
+    
+    <nav class="horizontal-menu">
+    <ul onclick="toggleVerticalMenu()">
+        <li><a href="#">쉐프소개</a></li>
+        <li><a href="#">음식종류</a></li>
+        <li><a href="#">이벤트</a></li>
+    </ul>
+    </nav>
+    
+    <nav class="vertical-menu" id="verticalMenu">
+        <ul>
+            <li><a href="#">백인빈</a></li>
+            <li><a href="#">우진환</a>
+                <ul class="sub-menu">
+                    <li><a href="#">한식</a></li>
+                    <li><a href="#">중식</a></li>
+                    <li><a href="#">양식</a></li>
+                </ul>
+            </li>
+            <li><a href="#">김송이</a></li>
+        </ul>
+    </nav>
+    
+    <table>
+        <tr><th>메뉴판</th><th>한식</th><th>중식</th><th>양식</th></tr>
+        <tr><td>밑반찬</td><td>김치</td><td>단무지</td><td>피클</td></tr>
+        <tr><td>메인</td><td>국밥</td><td>짬뽕</td><td>파스타</td></tr>
+        <tr><td>디저트</td><td>식혜</td><td>탕후루</td><td>푸딩</td></tr>
+    </table>
+    
+    <div class="box">
+        <h2>최고의 맛</h2>
+        <p>우진환의 레스토랑</p>
+    </div>
+    
+    <ul>
+        <li>공기밥 무한리필</li>
+        <li>최고의 서비스</li>
+        <li>남기면 벌금</li>
+    </ul>
+
+    <a href="https://storage.googleapis.com/padlet-uploads/2051448566/2ff0904823a00bea879167b3b2220081/reservation.html?Expires=1686389191&GoogleAccessId=778043051564-q79bsd8mc40b0bl82ikkrtc3jdofe4dg%40developer.gserviceaccount.com&Signature=uqnmWCmj%2FdUdkUsvVii4Q3OaRfkXv3dVOCIy9RW%2FQh9IuntRBHPygXpd6iV7fndWu6x0evSbNrrS9v1fEiO0l1YrMTsMPaacOpX2GfGmN1FvDZ5gU8VzzD8c9pFdPncBtX0Sg%2FjTALoXJzGhm6GFcfKr3MDgn8npJDuVuUQM8sI%3D&original-url=https%3A%2F%2Fpadlet-uploads.storage.googleapis.com%2F2051448566%2F2ff0904823a00bea879167b3b2220081%2Freservation.html">
+        예약하러가기!
+    </a>
+
+    <script>
+        function toggleVerticalMenu() {
+            var verticalMenu = document.getElementById("verticalMenu");
+            if (verticalMenu.style.display === "block") {
+                verticalMenu.style.display = "none";
+            } else {
+                verticalMenu.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
